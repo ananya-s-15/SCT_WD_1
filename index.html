@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft — Learn. Build. Launch.</title>
+    <meta name="description" content="Master web development, data science, DevOps, and DSA with CodeCraft. Learn online with elite industry mentors, build real projects, and launch your software engineering career.">
+    <meta property="og:title" content="CodeCraft — Learn. Build. Launch.">
+    <meta property="og:description" content="Master coding with live mentor-led courses, real portfolio projects, and custom placement portals.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav id="navbar">
+    <a href="#home" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        CodeCraft
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Enroll Now</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#home"         onclick="closeMobile()">Home</a>
+    <a href="#courses"      onclick="closeMobile()">Courses</a>
+    <a href="#about"        onclick="closeMobile()">About</a>
+    <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+    <a href="#contact"      onclick="closeMobile()">Contact</a>
+    <a href="#contact" class="nav-cta" onclick="closeMobile()">Enroll Now</a>
+</div>
+
+<!-- ══════ HERO ══════ -->
+<section id="home">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <div class="badge-dot"></div>
+            🚀 New Batch Starting July 2026
+        </div>
+        <h1 class="hero-title">
+            Learn to Code.<br>
+            <span class="grad-text">Build the Future.</span>
+        </h1>
+        <p class="hero-sub">
+            Join 10,000+ students mastering web development, data science, and DSA — from absolute scratch to job-ready in months.
+        </p>
+        <div class="hero-btns">
+            <a href="#courses" class="btn-primary">Explore Courses →</a>
+            <a href="#about"   class="btn-outline">How It Works</a>
+        </div>
+        <div class="hero-stats">
+            <div><div class="hstat-num">10K+</div><div class="hstat-label">Students</div></div>
+            <div><div class="hstat-num">50+</div><div class="hstat-label">Courses</div></div>
+            <div><div class="hstat-num">95%</div><div class="hstat-label">Placement</div></div>
+            <div><div class="hstat-num">4.9★</div><div class="hstat-label">Rating</div></div>
+        </div>
+    </div>
+
+    <!-- Interactive Code Editor -->
+    <div class="code-win">
+        <div class="code-bar">
+            <div class="dot r"></div>
+            <div class="dot y"></div>
+            <div class="dot g"></div>
+            <span class="code-fname">student.js — CodeCraft</span>
+            <div class="code-header-actions">
+                <span class="playground-badge">Playground</span>
+                <button class="btn-run" onclick="runPlaygroundCode()">
+                    <span>▶</span> Run Code
+                </button>
+            </div>
+        </div>
+        <!-- Editable Javascript code block -->
+        <div class="code-body" id="codeEditor" contenteditable="true" spellcheck="false">
+            <div class="cl"><span class="ln">1</span><span class="cm">// Edit the student object below, then click "Run Code"!</span></div>
+            <div class="cl"><span class="ln">2</span><span></span></div>
+            <div class="cl"><span class="ln">3</span><span><span class="kw">const </span><span class="vr">student</span><span class="pu"> = {</span></span></div>
+            <div class="cl"><span class="ln">4</span><span><span class="fn">  name</span><span class="pu">: </span><span class="st">"Future Dev"</span><span class="pu">,</span></span></div>
+            <div class="cl"><span class="ln">5</span><span><span class="fn">  skills</span><span class="pu">: [</span><span class="st">"HTML"</span><span class="pu">, </span><span class="st">"CSS"</span><span class="pu">, </span><span class="st">"JS"</span><span class="pu">],</span></span></div>
+            <div class="cl"><span class="ln">6</span><span><span class="fn">  goal</span><span class="pu">: </span><span class="st">"Get Hired"</span><span class="pu">,</span></span></div>
+            <div class="cl"><span class="ln">7</span><span><span class="fn">  enrolled</span><span class="pu">: </span><span class="kw">true</span></span></div>
+            <div class="cl"><span class="ln">8</span><span><span class="pu">};</span></span></div>
+            <div class="cl"><span class="ln">9</span><span></span></div>
+            <div class="cl"><span class="ln">10</span><span><span class="kw">function </span><span class="fn">learnAndGrow</span><span class="pu">(</span><span class="vr">s</span><span class="pu">) {</span></span></div>
+            <div class="cl"><span class="ln">11</span><span><span class="kw">  return </span><span class="vr">s</span><span class="pu">.</span><span class="fn">skills</span><span class="pu">.</span><span class="fn">map</span><span class="pu">(</span><span class="vr">skill</span><span class="pu"> =&gt;</span></span></div>
+            <div class="cl"><span class="ln">12</span><span><span class="st">    `✅ Mastered ${</span><span class="vr">skill</span><span class="st">}`</span></span></div>
+            <div class="cl"><span class="ln">13</span><span><span class="pu">  );</span></span></div>
+            <div class="cl"><span class="ln">14</span><span><span class="pu">}</span></span></div>
+            <div class="cl"><span class="ln">15</span><span></span></div>
+            <div class="cl"><span class="ln">16</span><span><span class="fn">console</span><span class="pu">.</span><span class="fn">log</span><span class="pu">(</span><span class="fn">learnAndGrow</span><span class="pu">(</span><span class="vr">student</span><span class="pu">));</span></span></div>
+        </div>
+        <!-- Simulated Console Output -->
+        <div class="code-console" id="codeConsole">
+            <div class="console-title">
+                <span>Console Output</span>
+                <span>JS Environment</span>
+            </div>
+            <div class="console-lines" id="consoleLines">
+                <div class="console-line text-muted" style="color: var(--text-muted);">// Click "Run Code" to execute</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ COURSES ══════ -->
+<section id="courses">
+    <div class="sec-hdr reveal">
+        <div class="eyebrow">// what we teach</div>
+        <h2 class="sec-title">Pick Your <span class="grad-text">Learning Path</span></h2>
+        <p class="sec-sub">From complete beginner to industry-ready developer — we have a course for every level.</p>
+    </div>
+
+    <div class="courses-grid">
+        <div class="course-card reveal">
+            <div class="c-icon">🌐</div>
+            <div class="c-title">Web Development</div>
+            <div class="c-desc">HTML, CSS, JavaScript, and React. Build real, responsive websites from the ground up.</div>
+            <div class="c-meta">
+                <span class="badge b-beg">Beginner</span>
+                <span class="c-dur">12 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('webdev')">View Syllabus →</a>
+        </div>
+
+        <div class="course-card reveal">
+            <div class="c-icon">🧠</div>
+            <div class="c-title">Data Science &amp; AI</div>
+            <div class="c-desc">Python, NumPy, Pandas, Machine Learning and AI fundamentals for real-world problems.</div>
+            <div class="c-meta">
+                <span class="badge b-int">Intermediate</span>
+                <span class="c-dur">16 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('ds')">View Syllabus →</a>
+        </div>
+
+        <div class="course-card reveal">
+            <div class="c-icon">☕</div>
+            <div class="c-title">Java &amp; DSA</div>
+            <div class="c-desc">Core Java, Data Structures, Algorithms, and competitive programming for placements.</div>
+            <div class="c-meta">
+                <span class="badge b-int">Intermediate</span>
+                <span class="c-dur">14 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('java')">View Syllabus →</a>
+        </div>
+
+        <div class="course-card reveal">
+            <div class="c-icon">🎨</div>
+            <div class="c-title">UI/UX Design</div>
+            <div class="c-desc">Figma, design principles, prototyping, and user research to craft stunning interfaces.</div>
+            <div class="c-meta">
+                <span class="badge b-beg">Beginner</span>
+                <span class="c-dur">10 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('uiux')">View Syllabus →</a>
+        </div>
+
+        <div class="course-card reveal">
+            <div class="c-icon">⚙️</div>
+            <div class="c-title">Backend Development</div>
+            <div class="c-desc">Node.js, Express, REST APIs, and databases. Build the engine behind every great app.</div>
+            <div class="c-meta">
+                <span class="badge b-adv">Advanced</span>
+                <span class="c-dur">14 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('backend')">View Syllabus →</a>
+        </div>
+
+        <div class="course-card reveal">
+            <div class="c-icon">☁️</div>
+            <div class="c-title">DevOps &amp; Cloud</div>
+            <div class="c-desc">Git, Docker, Linux, and cloud deployment — skills every modern developer needs to know.</div>
+            <div class="c-meta">
+                <span class="badge b-adv">Advanced</span>
+                <span class="c-dur">10 weeks</span>
+            </div>
+            <a href="javascript:void(0)" class="c-enroll" onclick="openSyllabus('devops')">View Syllabus →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ ABOUT ══════ -->
+<section id="about">
+    <div class="about-left reveal">
+        <div class="eyebrow">// why codecraft</div>
+        <h2 class="sec-title">Learning that actually <span class="grad-text">gets you hired</span></h2>
+        <p class="sec-sub">We don't just teach syntax. We teach you how to think like a developer, build real projects, and land your first tech job with confidence.</p>
+
+        <div class="abt-features">
+            <div class="af">
+                <div class="af-icon">🎯</div>
+                <div class="af-title">Expert Mentors</div>
+                <div class="af-desc">Learn from working professionals with 5+ years of industry experience.</div>
+            </div>
+            <div class="af">
+                <div class="af-icon">🛠️</div>
+                <div class="af-title">Live Projects</div>
+                <div class="af-desc">Build 5+ portfolio-worthy projects per course — not just exercises.</div>
+            </div>
+            <div class="af">
+                <div class="af-icon">💼</div>
+                <div class="af-title">Job Support</div>
+                <div class="af-desc">Resume reviews, mock interviews, and referrals to hiring partners.</div>
+            </div>
+            <div class="af">
+                <div class="af-icon">🤝</div>
+                <div class="af-title">Community</div>
+                <div class="af-desc">10,000+ students in our active Discord for 24/7 peer support.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Interactive Stepper -->
+    <div class="roadmap-container reveal">
+        <div class="roadmap-nav">
+            <div class="roadmap-progress-bar" id="roadmapProgress"></div>
+            <button class="roadmap-step-btn active" onclick="switchStep(0)" aria-label="Step 1: Enroll">
+                <div class="step-num">1</div>
+                <div class="step-title">Enroll</div>
+            </button>
+            <button class="roadmap-step-btn" onclick="switchStep(1)" aria-label="Step 2: Learn">
+                <div class="step-num">2</div>
+                <div class="step-title">Learn</div>
+            </button>
+            <button class="roadmap-step-btn" onclick="switchStep(2)" aria-label="Step 3: Build">
+                <div class="step-num">3</div>
+                <div class="step-title">Build</div>
+            </button>
+            <button class="roadmap-step-btn" onclick="switchStep(3)" aria-label="Step 4: Launch">
+                <div class="step-num">4</div>
+                <div class="step-title">Launch</div>
+            </button>
+        </div>
+        <div class="roadmap-content-box">
+            <div class="roadmap-pane active" id="pane-0">
+                <h3>Choose Your Path</h3>
+                <p>Select from our industry-aligned paths. Speak with expert mentors to align the curriculum with your career goals.</p>
+                <div class="roadmap-bullets">
+                    <div class="roadmap-bullet"><span>⚡</span> 1-on-1 Mentorship</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Career Consultation</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Flexible Batches</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Syllabus Walkthrough</div>
+                </div>
+            </div>
+            <div class="roadmap-pane" id="pane-1">
+                <h3>Live Interactive Classes</h3>
+                <p>Master core programming concepts through live classes led by top tech professionals. Participate in interactive Q&amp;As and coding sprints.</p>
+                <div class="roadmap-bullets">
+                    <div class="roadmap-bullet"><span>⚡</span> Daily Practice Labs</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Dedicated Tutor Support</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Active Discord Forums</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Code Review Reviews</div>
+                </div>
+            </div>
+            <div class="roadmap-pane" id="pane-2">
+                <h3>Build Capstone Projects</h3>
+                <p>Work on multiple complex industry projects and construct a stellar Git portfolio to showcase your production readiness.</p>
+                <div class="roadmap-bullets">
+                    <div class="roadmap-bullet"><span>⚡</span> 5+ Real-world Capstones</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Git Collaboration</div>
+                    <div class="roadmap-bullet"><span>⚡</span> CI/CD Implementation</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Live URL Deployments</div>
+                </div>
+            </div>
+            <div class="roadmap-pane" id="pane-3">
+                <h3>Launch Your Tech Career</h3>
+                <p>Receive intensive placement support, resume optimization, mock HR and tech interviews, and direct referrals to partners.</p>
+                <div class="roadmap-bullets">
+                    <div class="roadmap-bullet"><span>⚡</span> Mock Coding Assesses</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Partner Referral Jobs</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Profile Tuning (LinkedIn)</div>
+                    <div class="roadmap-bullet"><span>⚡</span> Negotiation Sessions</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ STUDENT PROJECT SHOWROOM ══════ -->
+<section id="showroom">
+    <div class="sec-hdr reveal">
+        <div class="eyebrow">// student portfolios</div>
+        <h2 class="sec-title">What Our <span class="grad-text">Students Build</span></h2>
+        <p class="sec-sub">Take a look at actual capstone projects built by our graduates. These are fully deployed, production-ready applications.</p>
+    </div>
+
+    <div class="showroom-tabs reveal">
+        <button class="tab-btn active" onclick="filterProjects('all')">All Projects</button>
+        <button class="tab-btn" onclick="filterProjects('webdev')">Web Dev</button>
+        <button class="tab-btn" onclick="filterProjects('ds')">Data Science &amp; AI</button>
+        <button class="tab-btn" onclick="filterProjects('backend')">Backend &amp; DevOps</button>
+    </div>
+
+    <div class="showroom-grid reveal" id="projectsGrid">
+        <!-- Dynamic Project Cards will be loaded here by script.js -->
+    </div>
+</section>
+
+<!-- ══════ TESTIMONIALS ══════ -->
+<section id="testimonials">
+    <div class="sec-hdr reveal">
+        <div class="eyebrow">// student reviews</div>
+        <h2 class="sec-title">What Our <span class="grad-text">Students Say</span></h2>
+        <p class="sec-sub">Real stories from real students who transformed their careers with CodeCraft.</p>
+    </div>
+
+    <div class="testi-carousel-container reveal">
+        <div class="testi-slider" id="testimonialSlider">
+            <!-- Slide 1 -->
+            <div class="testi-slide">
+                <div class="testi-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"CodeCraft's Web Dev course took me from zero to landing my first frontend internship in just 3 months. The projects were real, the mentors were amazing."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">AX</div>
+                        <div>
+                            <div class="t-name">abc xyz</div>
+                            <div class="t-role">Frontend Developer @ TCS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="testi-slide">
+                <div class="testi-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"The Java & DSA course is exactly what I needed for campus placements. Mock interviews and problem-solving sessions were absolute game changers."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">PS</div>
+                        <div>
+                            <div class="t-name">Priya Sharma</div>
+                            <div class="t-role">SDE Intern @ Wipro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="testi-slide">
+                <div class="testi-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-quote">"I switched from a non-tech background to data science in 4 months. CodeCraft's curriculum is structured perfectly for beginners who want to go deep."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">MK</div>
+                        <div>
+                            <div class="t-name">Mohammed Khan</div>
+                            <div class="t-role">Data Analyst @ Infosys</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testi-controls">
+            <button class="testi-dot active" onclick="currentTestiSlide(0)" aria-label="Go to slide 1"></button>
+            <button class="testi-dot" onclick="currentTestiSlide(1)" aria-label="Go to slide 2"></button>
+            <button class="testi-dot" onclick="currentTestiSlide(2)" aria-label="Go to slide 3"></button>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ FAQ SECTION ══════ -->
+<section id="faq">
+    <div class="sec-hdr reveal">
+        <div class="eyebrow">// FAQ</div>
+        <h2 class="sec-title">Frequently Asked <span class="grad-text">Questions</span></h2>
+        <p class="sec-sub">Everything you need to know about our courses, mentor support, and placement program.</p>
+    </div>
+
+    <div class="faq-grid reveal">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Do I need prior coding experience?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                No prior experience is required! Our beginner paths (Web Dev, UI/UX) start from the absolute basics of programming and design. We teach you step-by-step from variables and HTML structures up to professional development.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>How do live mentor sessions work?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                Live sessions are hosted interactively 3 times a week. During class, you can code along with your mentor, ask questions in real-time, and participate in peer discussions. All classes are recorded and uploaded for lifetime viewing access.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>What kind of placement support is provided?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                We offer resume editing workshops, specialized LinkedIn profile tuning, mock technical coding assessments, and HR mock interviews. Additionally, we have over 150+ active hiring partners in tech who receive resume shortlists from our top graduates.
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                <span>Are there options for installment payments?</span>
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+                Yes, we support flexible zero-interest EMI payment options across major credit cards, as well as monthly installment options for students requiring financial support. Get in touch with our team for customized plans.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ CONTACT ══════ -->
+<section id="contact">
+    <div class="contact-left reveal">
+        <div class="eyebrow">// get in touch</div>
+        <h2 class="sec-title">Start Your <span class="grad-text">Coding Journey</span></h2>
+        <p class="sec-sub">Have questions about a course? Want to speak to a mentor first? We're here to help you choose the right path.</p>
+
+        <div class="ci-list">
+            <div class="ci-item">
+                <div class="ci-ico">📧</div>
+                <div>
+                    <div class="ci-lbl">Email Us</div>
+                    <div class="ci-val">hello@codecraft.dev</div>
+                </div>
+            </div>
+            <div class="ci-item">
+                <div class="ci-ico">📍</div>
+                <div>
+                    <div class="ci-lbl">Location</div>
+                    <div class="ci-val">Hyderabad, India</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reveal">
+        <div class="contact-form">
+            <div class="form-head">Enroll in a Course</div>
+            <div class="form-note">Fill out the form and we'll reach out within 24 hours.</div>
+
+            <div class="form-row">
+                <div class="fg">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" placeholder="abc">
+                </div>
+                <div class="fg">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" placeholder="xyz">
+                </div>
+            </div>
+
+            <div class="fg">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="abc.xyz@example.com">
+            </div>
+
+            <div class="fg">
+                <label for="course">Course Interested In</label>
+                <select id="course">
+                    <option value="">Select a course...</option>
+                    <option value="webdev">Web Development</option>
+                    <option value="ds">Data Science &amp; AI</option>
+                    <option value="java">Java &amp; DSA</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="backend">Backend Development</option>
+                    <option value="devops">DevOps &amp; Cloud</option>
+                </select>
+            </div>
+
+            <div class="fg">
+                <label for="msg">Message (Optional)</label>
+                <textarea id="msg" rows="3" placeholder="Any questions or details..."></textarea>
+            </div>
+
+            <button class="form-btn" onclick="handleContactForm(event)">Send Enquiry →</button>
+        </div>
+    </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+    <div class="footer-logo">⚡ CodeCraft</div>
+    <div class="footer-copy">© 2026 CodeCraft. All rights reserved.</div>
+    <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</footer>
+
+<!-- Course Details Modal -->
+<div class="modal-overlay" id="courseModal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modalTitle">Course Syllabus</h3>
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p class="modal-desc" id="modalDesc"></p>
+            <h4 class="modal-section-title">Core Tools &amp; Tech Stack</h4>
+            <div class="modal-tech-list" id="modalTech"></div>
+            <h4 class="modal-section-title">Weekly Curriculum</h4>
+            <div class="modal-syllabus" id="modalSyllabus"></div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn-close" onclick="closeModal()">Close</button>
+            <button class="btn-primary" onclick="enrollFromModal()">Enroll In This Course →</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notifications Container -->
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
